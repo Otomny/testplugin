@@ -1,0 +1,5 @@
+main: fr.omny.App
+name: TestPlugin
+version: '1.0'
+description: A test plugin
+api-version: 1.19
