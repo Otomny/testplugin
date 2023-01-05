@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Material;
-import org.bukkit.event.inventory.ClickType;
 
 import fr.omny.guis.OClass;
 import fr.omny.guis.OField;
+import fr.omny.guis.fields.ItemField;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,9 +34,8 @@ public class TestManager {
 		@OField(display = Material.PAPER)
 		private int count = 5;
 
-		@OField(display = Material.ANVIL, description = {
-				"Set the click type" })
-		private List<ClickType> type = new ArrayList<>();
+		@OField
+		private ItemField item = new ItemField();
 
 	}
 
