@@ -23,11 +23,17 @@ import lombok.Getter;
 @Getter
 public class App extends JavaPlugin {
 
+	private static App instance;
+	public static App getInstance() {
+			return instance;
+	}
+
 	private TestManager testManager;
 
 	@Override
 	public void onEnable() {
 		super.onEnable();
+		instance = this;
 		OGui.register(this);
 		this.testManager = new TestManager();
 		testManager.getList().add(new TestObject());

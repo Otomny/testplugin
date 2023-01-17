@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Material;
+import org.bukkit.entity.Player;
 
+import fr.omny.App;
 import fr.omny.guis.OClass;
 import fr.omny.guis.OField;
+import fr.omny.guis.OMethod;
 import fr.omny.guis.fields.ItemField;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,6 +39,16 @@ public class TestManager {
 
 		@OField
 		private ItemField item = new ItemField();
+
+		@OMethod(value = "Hello world!", icon = Material.EMERALD)
+		public void test() {
+			App.getInstance().getLogger().info("Hello from object !");
+		}
+
+		@OMethod
+		public void inject(Player player) {
+			player.sendMessage("§eThis is a test");
+		}
 
 	}
 
