@@ -5,22 +5,23 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fr.omny.App;
+import fr.omny.gui.TestManager;
 import fr.omny.guis.OGui;
+import fr.omny.odi.Autowired;
 
 public class GuiCommand extends Command {
 
-	private App main;
+	@Autowired
+	private TestManager manager;
 
-	public GuiCommand(App main) {
+	public GuiCommand() {
 		super("gui");
-		this.main = main;
 	}
 
 	@Override
 	public boolean execute(CommandSender sender, String what, String[] arg2) {
 		if (sender instanceof Player player) {
-			OGui.open(player, this.main.getTestManager());
+			OGui.open(player, manager);
 			return true;
 		}
 		return false;

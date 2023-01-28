@@ -12,9 +12,11 @@ import fr.omny.guis.OClass;
 import fr.omny.guis.OField;
 import fr.omny.guis.OMethod;
 import fr.omny.guis.fields.ItemField;
+import fr.omny.odi.Component;
 import lombok.Getter;
 import lombok.Setter;
 
+@Component
 @OClass
 @Getter
 public class TestManager {
