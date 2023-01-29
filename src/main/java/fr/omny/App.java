@@ -39,7 +39,7 @@ public class App extends JavaPlugin {
 		super.onEnable();
 		instance = this;
 		OGui.register(this);
-		Injector.startApplication(getClass());
+		Injector.startApplication(getClass(), getLogger());
 		Injector.wire(this);
 		testManager.getList().add(new TestObject());
 
