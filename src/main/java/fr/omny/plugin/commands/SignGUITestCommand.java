@@ -1,17 +1,16 @@
-package fr.omny.commands;
+package fr.omny.plugin.commands;
 
 
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fr.omny.App;
+import fr.omny.flow.commands.Cmd;
 import fr.omny.guis.backend.sign.SignGUIBuilder;
 import fr.omny.guis.utils.FunctionalUtils;
 
-public class SignGUITestCommand extends Command {
+public class SignGUITestCommand extends Cmd {
 
-	public SignGUITestCommand(App main) {
+	public SignGUITestCommand() {
 		super("tsigngui");
 	}
 

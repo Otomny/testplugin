@@ -1,15 +1,15 @@
-package fr.omny.commands;
+package fr.omny.plugin.commands;
 
 
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fr.omny.gui.TestManager;
+import fr.omny.flow.commands.Cmd;
 import fr.omny.guis.OGui;
 import fr.omny.odi.Autowired;
+import fr.omny.plugin.gui.TestManager;
 
-public class GuiCommand extends Command {
+public class GuiCommand extends Cmd {
 
 	@Autowired
 	private TestManager manager;

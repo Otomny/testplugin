@@ -33,22 +33,10 @@
     </dependency>
     <dependency>
       <groupId>fr.omny</groupId>
-      <artifactId>guis</artifactId>
+      <artifactId>flow</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
-    <dependency>
-      <groupId>fr.omny</groupId>
-      <artifactId>odi</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <!-- <dependency>
-      <groupId>fr.omny</groupId>
-      <artifactId>crud</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency> -->
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>

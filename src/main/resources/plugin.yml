@@ -1,4 +1,4 @@
-main: fr.omny.App
+main: fr.omny.plugin.App
 name: TestPlugin
 version: '1.0'
 description: A test plugin
