@@ -1,6 +1,8 @@
 package fr.omny.plugin;
 
 
+import org.bukkit.plugin.Plugin;
+
 import fr.omny.flow.plugins.FlowPlugin;
 import lombok.Getter;
 
@@ -8,26 +10,21 @@ import lombok.Getter;
 public class App extends FlowPlugin {
 
 	@Override
-	public void load() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void start() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void stop() {
-		// TODO Auto-generated method stub
-
-	}
+	public void load() {}
 
 	@Override
 	public String getPackageName() {
 		return getClass().getPackageName();
+	}
+
+	@Override
+	public void serverStart(Plugin plugin) {
+		
+	}
+
+	@Override
+	public void serverStop(Plugin plugin) {
+		
 	}
 
 }
