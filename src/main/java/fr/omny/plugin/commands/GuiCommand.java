@@ -5,6 +5,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import fr.omny.flow.commands.Cmd;
+import fr.omny.flow.commands.wrapper.Arguments;
 import fr.omny.guis.OGui;
 import fr.omny.odi.Autowired;
 import fr.omny.plugin.gui.TestManager;
@@ -25,6 +26,12 @@ public class GuiCommand extends Cmd {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public void execute(CommandSender sender, Arguments args) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

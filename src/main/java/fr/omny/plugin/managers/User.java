@@ -20,14 +20,14 @@ public class User {
 	@Id
 	private UUID id;
 	private int token = 0;
-	private String data = "";
+	private String locale = "";
 
 	public User(){}
 
 	public User(Player player) {
 		this.id = player.getUniqueId();
 		this.token = 0;
-		this.data = "";
+		this.locale = "";
 	}
 
 }
