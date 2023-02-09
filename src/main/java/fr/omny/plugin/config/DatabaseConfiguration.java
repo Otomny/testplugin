@@ -32,7 +32,7 @@ public class DatabaseConfiguration {
 	@Component
 	public MongoClient mongoClient() {
 		return MongoClients.create(MongoClientSettings.builder().uuidRepresentation(UuidRepresentation.STANDARD)
-				.applyToClusterSettings(b -> b.applyConnectionString(new ConnectionString(this.mongoDbUri)))
+				.applyConnectionString(new ConnectionString(this.mongoDbUri))
 				.applyToConnectionPoolSettings(b -> b.maxSize(10).minSize(2)).build());
 	}
 
