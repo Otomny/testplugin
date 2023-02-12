@@ -1,31 +1,37 @@
 package fr.omny.plugin.listeners;
 
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import fr.omny.flow.tasks.Dispatcher;
 import fr.omny.odi.Autowired;
 import fr.omny.plugin.managers.User;
 import fr.omny.plugin.managers.UserRepository;
 
-public class Connection implements Listener{
-	
+public class Connection implements Listener {
+
 	@Autowired
 	private UserRepository users;
+	@Autowired
+	private Dispatcher dispatcher;
 
 	@EventHandler
-	public void onJoin(PlayerJoinEvent event){
+	public void onJoin(PlayerJoinEvent event) {
 		var player = event.getPlayer();
-		if(!users.existsById(player.getUniqueId())){
+		if (!users.existsById(player.getUniqueId())) {
 			// create user
-			users.save(new User(player));
+			users.saveAsync(new User(player)).thenRun(() -> users.findById(player.getUniqueId()));
+		}else{
+			users.findByIdAsync(player.getUniqueId());
 		}
 	}
 
 	@EventHandler
-	public void onQuit(PlayerQuitEvent event){
-
+	public void onQuit(PlayerQuitEvent event) {
+		dispatcher.submit(() -> users.get(event.getPlayer())).thenAcceptAsync(opt -> opt.ifPresent(this.users::save));
 	}
 
 }

@@ -1,9 +1,16 @@
 package fr.omny.plugin;
 
 
+import java.util.function.Predicate;
+
+import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bukkit.plugin.Plugin;
 
 import fr.omny.flow.plugins.FlowPlugin;
+import fr.omny.flow.utils.mongodb.FlowCodec;
+import fr.omny.odi.Injector;
+import fr.omny.odi.utils.Predicates;
+import fr.omny.plugin.managers.User;
 import lombok.Getter;
 
 @Getter
@@ -13,18 +20,23 @@ public class App extends FlowPlugin {
 	public void load() {}
 
 	@Override
+	public void loadComponents() {
+		var codec = Injector.getService(FlowCodec.class);
+		codec.registerCodecProvider(PojoCodecProvider.builder().register(User.class).build());
+	}
+
+	@Override
 	public String getPackageName() {
-		return getClass().getPackageName();
+		return App.class.getPackageName();
 	}
 
 	@Override
 	public void serverStart(Plugin plugin) {
-		
 	}
 
 	@Override
 	public void serverStop(Plugin plugin) {
-		
+
 	}
 
 }
