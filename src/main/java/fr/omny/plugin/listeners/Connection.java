@@ -23,15 +23,15 @@ public class Connection implements Listener {
 		var player = event.getPlayer();
 		if (!users.existsById(player.getUniqueId())) {
 			// create user
-			users.saveAsync(new User(player)).thenRun(() -> users.findById(player.getUniqueId()));
-		}else{
-			users.findByIdAsync(player.getUniqueId());
+			users.saveAsync(new User(player)).thenRun(() -> users.getAsync(player));
+		} else {
+			users.getAsync(player);
 		}
 	}
 
 	@EventHandler
 	public void onQuit(PlayerQuitEvent event) {
-		dispatcher.submit(() -> users.get(event.getPlayer())).thenAcceptAsync(opt -> opt.ifPresent(this.users::save));
+		users.getAsync(event.getPlayer()).thenAcceptAsync(opt -> opt.ifPresent(this.users::save));
 	}
 
 }

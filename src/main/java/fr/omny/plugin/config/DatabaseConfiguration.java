@@ -13,6 +13,7 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 
 import fr.omny.flow.config.Config;
+import fr.omny.flow.plugins.Env;
 import fr.omny.flow.utils.mongodb.FlowCodec;
 import fr.omny.odi.Autowired;
 import fr.omny.odi.Component;
@@ -33,8 +34,8 @@ public class DatabaseConfiguration {
 	private FlowCodec codec;
 
 	@Component("databaseName")
-	public String databaseName(){
-		return dbName.orElse("flow");
+	public String databaseName() {
+		return dbName.or(() -> Env.get(Env.DATABASE_NAME)).orElse("flow");
 	}
 
 	@Component

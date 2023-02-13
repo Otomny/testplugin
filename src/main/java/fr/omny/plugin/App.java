@@ -1,15 +1,12 @@
 package fr.omny.plugin;
 
 
-import java.util.function.Predicate;
-
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bukkit.plugin.Plugin;
 
 import fr.omny.flow.plugins.FlowPlugin;
 import fr.omny.flow.utils.mongodb.FlowCodec;
 import fr.omny.odi.Injector;
-import fr.omny.odi.utils.Predicates;
 import fr.omny.plugin.managers.User;
 import lombok.Getter;
 
