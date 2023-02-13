@@ -3,3 +3,5 @@ db:
     uri: redis://127.0.0.1:6379
   mongodb:
     uri: undefined
+distributed:
+  enable_broadcast_chat: true
