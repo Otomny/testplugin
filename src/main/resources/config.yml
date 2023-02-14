@@ -4,4 +4,6 @@ db:
   mongodb:
     uri: undefined
 distributed:
+  thread_config:
+    thread_pool_size: 4
   enable_broadcast_chat: true
