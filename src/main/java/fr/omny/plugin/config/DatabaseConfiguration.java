@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.bson.UuidRepresentation;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
+import org.redisson.codec.JsonJacksonCodec;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -41,6 +42,7 @@ public class DatabaseConfiguration {
 	@Component
 	public RedissonClient redisClient() {
 		org.redisson.config.Config config = new org.redisson.config.Config();
+		config.setCodec(new JsonJacksonCodec());
 		config.useSingleServer().setAddress(this.redisUri).setConnectionMinimumIdleSize(4).setConnectionPoolSize(8);
 		return Redisson.create(config);
 	}
