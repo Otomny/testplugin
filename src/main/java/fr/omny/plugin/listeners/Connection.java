@@ -1,12 +1,11 @@
 package fr.omny.plugin.listeners;
 
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import fr.omny.flow.tasks.Dispatcher;
+import fr.omny.flow.api.tasks.Dispatcher;
 import fr.omny.odi.Autowired;
 import fr.omny.plugin.managers.User;
 import fr.omny.plugin.managers.UserRepository;

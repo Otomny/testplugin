@@ -3,8 +3,8 @@ package fr.omny.plugin;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bukkit.plugin.Plugin;
 
+import fr.omny.flow.api.data.implementation.FlowCodec;
 import fr.omny.flow.plugins.FlowPlugin;
-import fr.omny.flow.utils.mongodb.FlowCodec;
 import fr.omny.odi.Injector;
 import fr.omny.plugin.config.DatabaseConfiguration;
 import fr.omny.plugin.managers.User;

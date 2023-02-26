@@ -30,7 +30,7 @@ public class SetCommand extends Cmd {
 			var type = args.get(0, Material.class);
 			var baseLocation = player.getLocation();
 			Area area = new Area(baseLocation.clone()
-					.subtract(10, 10, 10), baseLocation.clone().subtract(5, 5, 5));
+					.subtract(5, 5, 5), baseLocation.clone().add(5, 0, 5));
 			var blockUpdates = area.getBlockUpdate()
 					.stream()
 					.map(BlockUpdate.setType(type))

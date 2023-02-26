@@ -33,8 +33,8 @@
     </dependency>
     <dependency>
       <groupId>fr.omny</groupId>
-      <artifactId>flow</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <artifactId>flow-spigot</artifactId>
+      <version>1.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>

@@ -1,6 +1,5 @@
 package fr.omny.plugin.managers;
 
-
 import java.util.UUID;
 
 import org.bson.codecs.pojo.annotations.BsonId;
@@ -9,8 +8,8 @@ import org.bukkit.entity.Player;
 import org.redisson.api.annotation.REntity;
 import org.redisson.api.annotation.RId;
 
-import fr.omny.flow.data.Id;
-import fr.omny.flow.data.Val;
+import fr.omny.flow.api.data.Id;
+import fr.omny.flow.api.data.Val;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,7 +29,8 @@ public class User {
 	@BsonProperty
 	private String locale = "";
 
-	public User(){}
+	public User() {
+	}
 
 	public User(Player player) {
 		this.id = player.getUniqueId();
@@ -38,15 +38,15 @@ public class User {
 		this.locale = "";
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
-	
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", token=" + token + ", locale=" + locale + "]";
 	}
-
-	
 
 }

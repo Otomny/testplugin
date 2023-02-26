@@ -6,17 +6,17 @@ import java.util.concurrent.CompletableFuture;
 
 import org.bukkit.entity.Player;
 
-import fr.omny.flow.data.MongoRepository;
-import fr.omny.flow.data.Repository;
+import fr.omny.flow.api.data.MongoRepository;
+import fr.omny.flow.api.data.Repository;
 
 @Repository
-public interface UserRepository extends MongoRepository<User, UUID>{
-	
-	default Optional<User> get(Player player){
+public interface UserRepository extends MongoRepository<User, UUID> {
+
+	default Optional<User> get(Player player) {
 		return findById(player.getUniqueId());
 	}
 
-	default CompletableFuture<Optional<User>> getAsync(Player player){
+	default CompletableFuture<Optional<User>> getAsync(Player player) {
 		return findByIdAsync(player.getUniqueId());
 	}
 
