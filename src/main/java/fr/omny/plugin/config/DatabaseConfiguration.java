@@ -12,9 +12,9 @@ import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 
+import fr.omny.flow.api.config.Config;
 import fr.omny.flow.api.data.implementation.FlowCodec;
 import fr.omny.flow.api.process.Env;
-import fr.omny.flow.config.Config;
 import fr.omny.odi.Autowired;
 import fr.omny.odi.Component;
 
